@@ -1,8 +1,18 @@
 import React from 'react'
 
+
 const Cards = ({status_report, date, section, description, location, img}) => {
+  
+  if (status_report === null || status_report === 1 ) {
+    status_report = 'pendiente'
+  } else if (status_report === 2) {
+    status_report = 'en proceso'
+  } else if (status_report === 3) {
+    status_report = 'finalizado'
+  }
+
   return (
-    <div className='w-[285px] h-[200px] bg-slate-400 rounded-xl cursor-pointer p-4 '>
+    <div className='w-[285px] h-[200px] bg-slate-400 rounded-xl cursor-pointer p-4 overflow-y-auto '>
       <h1>Estado:{status_report} </h1>
       <p>fecha de informe:{date} </p>
       <p>Tipo de incidencia:{section} </p>

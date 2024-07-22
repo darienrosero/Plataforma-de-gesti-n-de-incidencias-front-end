@@ -1,4 +1,3 @@
-import axios from 'axios'
 import latter from '../assets/icons8-letter.gif'
 import lock from '../assets/icons8-lock.gif'
 import logo from '../assets/logo.png'
@@ -6,29 +5,35 @@ import logo from '../assets/logo.png'
 import { useLocation } from 'wouter'
 import { useContext } from 'react'
 import { UseContext } from '../services/UseContext'
-import { jwtDecode } from 'jwt-decode'
+import DashboardAdmin from './DasboardAdmin'
+import DashboardUser from './DashboardUser'
+
 
 export default function Login() {
 
-  const {login} = useContext(UseContext)
+  const { login } = useContext(UseContext)
   const [location, setLocation] = useLocation()
 
   const handleLogin = async (e) => {
     e.preventDefault()
 
-      const user_name = e.target[0].value
-      const password = e.target[1].value
-    
+    const user_name = e.target[0].value
+    const password = e.target[1].value
+
     try {
       await login(user_name, password)
+      const token = localStorage.getItem('token')
+      const decoded = jwtDecode(token)
+      if (decoded.rol === 1) {
+        return <DashboardAdmin />
+    } else {
+        return <DashboardUser />
+    }
     } catch (error) {
       alert(error.response?.data?.message || 'Login failed');
     }
 
   }
-
-
-
 
   return (
     <>
