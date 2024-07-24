@@ -45,7 +45,7 @@ const DashboardUser = () => {
         console.error("Error del servidor:", error.response.data.message);
         // Mostrar el mensaje de error al usuario
       } else {
-        console.error("Error al crear el examen:", error);
+        console.error("Error al crear el reporte:", error);
       }
     }
   };

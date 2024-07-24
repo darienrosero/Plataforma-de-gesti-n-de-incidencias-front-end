@@ -67,7 +67,7 @@ export default function Register() {
             text2={'Departamento'}
             name1="rolId"
             name2="departamento"
-            placeholder1={'Administrador'}
+            placeholder1={'Administrador o Residente'}
             placeholder2={'Departamento'}
           />
 

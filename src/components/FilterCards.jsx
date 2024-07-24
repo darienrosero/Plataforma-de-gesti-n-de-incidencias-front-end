@@ -10,12 +10,12 @@ const FilterCards = ({ filter }) => {
     allReports();
   }, []);
 
-  const filteredReports = filter === 'all' 
-    ? report 
+  const filteredReports = filter === 'all'
+    ? report
     : report.filter(item => item.section_id === parseInt(filter));
 
   const getSectionName = (id) => {
-    switch(id) {
+    switch (id) {
       case 1: return 'Building';
       case 2: return 'Carpentry';
       case 3: return 'Plumbing';

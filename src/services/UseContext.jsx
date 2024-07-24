@@ -9,6 +9,7 @@ const UserProvider = ({ children }) => {
     const [location, setLocation] = useLocation()
     const [user, setUser] = useState(null)
     const [report, setReport] = useState([])
+    const [myreports, setMyReports] = useState([])
     const [create, setCrete] = useState([])
 
 
@@ -62,7 +63,6 @@ const UserProvider = ({ children }) => {
         try {
             const token = localStorage.getItem('token')
             const report = await axios.get('http://localhost:3400/reports', { headers: { Authorization: `Bearer ${token}` } })
-            console.log(report)
             setReport(report.data)
         } catch (error) {
             console.error(error)
@@ -82,7 +82,7 @@ const UserProvider = ({ children }) => {
             setCrete(prevCreate => [...prevCreate, response.data]);
             return response.data;
         } catch (error) {
-            console.error("Error creating exam:", error);
+            console.error("Error creating report:", error);
             if (error.response) {
                 console.error("Response data:", error.response.data);
                 console.error("Response status:", error.response.status);
@@ -91,8 +91,20 @@ const UserProvider = ({ children }) => {
         }
     }
 
+    const myReports = async () => {
+        try {
+            const token = localStorage.getItem('token')
+            const result = await axios.get('http://localhost:3400/myreports', { headers: { Authorization: `Bearer ${token}` } })
+            console.log(result.data)
+            return setMyReports(result.data)
+          } catch (error) {
+            console.error(error)
+            setMyReports([])
+          }
+    }
+
     return (
-        <UseContext.Provider value={{ report, create, setCrete, register, setCrete, setReport, login, logout, allReports, createReport }} >
+        <UseContext.Provider value={{ report, create, myreports, setCrete, register, setCrete, setReport, login, logout, allReports, createReport, myReports }} >
             {children}
         </UseContext.Provider>
     )
