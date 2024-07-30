@@ -46,12 +46,12 @@ export default function Login() {
         <form onSubmit={handleLogin} >
           <div className='flex border border-gray-400 h-[48px] items-center gap-3 p-3 rounded-lg  '>
             <img src={latter} className='w-[20px] h-[20px] ' />
-            <input type="text" placeholder="Email" className='border-none focus:outline-none' />
+            <input type="text" placeholder="Email" className='border-none w-[100%] focus:outline-none' />
           </div>
 
           <div className='flex border border-gray-400 h-[48px] items-center gap-3 p-3 mt-4 rounded-lg '>
             <img src={lock} className='w-[20px] h-[20px] ' />
-            <input type="password" placeholder="Password" className='border-none focus:outline-none' />
+            <input type="password" placeholder="Password" className='border-none w-[100%] focus:outline-none' />
           </div>
 
           <button typeof='submit' className='text-[14px] text-white bg-purple-custom w-full mt-4 h-[38px] rounded-lg '>

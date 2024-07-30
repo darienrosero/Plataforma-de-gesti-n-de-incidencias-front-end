@@ -2,6 +2,7 @@ import axios from 'axios'
 import React, { createContext, useState } from 'react'
 import { jwtDecode } from 'jwt-decode'
 import { useLocation } from 'wouter'
+import { data } from 'autoprefixer'
 
 const UseContext = createContext()
 
@@ -11,6 +12,7 @@ const UserProvider = ({ children }) => {
     const [report, setReport] = useState([])
     const [myreports, setMyReports] = useState([])
     const [create, setCrete] = useState([])
+    const [elimate, setEliminate] = useState([])
 
 
     const login = async (user_name, password) => {
@@ -102,8 +104,21 @@ const UserProvider = ({ children }) => {
           }
     }
 
+    const eliminateReport = async (report_id) => {
+        try {
+            const token = localStorage.getItem('token')
+            const result = await axios.delete('http://localhost:3400/deleteReport', 
+                { headers: { Authorization: `Bearer ${token}` }, data: {report_id} })
+
+            return setEliminate(result)
+        } catch (error) {
+            console.error(error)
+            throw error
+        }
+    }
+
     return (
-        <UseContext.Provider value={{ report, create, myreports, user, location, setCrete, register, setCrete, setReport, login, logout, allReports, createReport, myReports }} >
+        <UseContext.Provider value={{ report, create, myreports, user, location, elimate, eliminateReport, setCrete, register, setCrete, setReport, login, logout, allReports, createReport, myReports }} >
             {children}
         </UseContext.Provider>
     )

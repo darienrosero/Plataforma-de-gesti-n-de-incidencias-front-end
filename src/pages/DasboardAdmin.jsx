@@ -115,7 +115,7 @@ const DashboardAdmin = () => {
                     value={formData.img}
                     onChange={handleInputChange} />
                   <div>
-                    <button type='submit' className='m-6 bg-[#3a868f] text-white w-[200px] p-2 rounded-2xl'>
+                    <button type='submit' className='m-6 bg-ligth-purple hover:bg-purple-custom text-white w-[200px] p-2 rounded-2xl'>
                       Enviar Reporte
                     </button>
                     <button
