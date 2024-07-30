@@ -1,11 +1,12 @@
 import React, { useContext, useState } from 'react'
+import { UseContext } from '../services/UseContext'
 import add from '../assets/add.png'
 import logo from '../assets/logo.png'
 import SearchBar from '../components/SearchBar'
-import { UseContext } from '../services/UseContext'
 import Report from './Report'
 import MyReports from '../components/MyReports'
 import MainCardsAdmin from '../components/MainCardsAdmin'
+import hotel from '../assets/hotel-exterior-2004871948.jpg'
 
 const DashboardAdmin = () => {
   const { logout } = useContext(UseContext)
@@ -66,14 +67,13 @@ const DashboardAdmin = () => {
     <>
 
       <div className='flex font-jost'>
-        <nav className='w-20 h-screen bg-purple-custom flex flex-col justify-between'>
+        <nav className='w-20 h-screen text-white bg-purple-custom flex flex-col justify-between'>
 
           <div className='flex flex-col justify-between items-center h-screen'>
 
             <div className='flex flex-col h-[300px] justify-between items-center'>
 
               <div onClick={() => setView('mainCards')} className='cursor-pointer'><img src={logo} className='w-20 ' /></div>
-              <p>admin</p>
 
               <div onClick={openModal} className='bg-ligth-purple w-16 h-16 text-[10px] rounded-lg flex flex-col justify-center items-center cursor-pointer '><img src={add} className='w-[30px] ' /> Enviar reporte</div>
 
@@ -110,8 +110,9 @@ const DashboardAdmin = () => {
         </nav>
 
         <div className="flex-1 flex flex-col">
+        <img src={hotel} className='h-[605px] relative ' />
           <SearchBar />
-          <div className='flex-1 p-4 bg-gray-50'>
+          <div className='flex-1 absolute p-4 mt-14 '> 
             {renderView()}
           </div>
         </div>

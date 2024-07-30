@@ -26,7 +26,7 @@ const FilterCards = ({ filter }) => {
   }
 
   return (
-    <div className='w-100% h-[450px] bg-white justify-between flex-wrap grid grid-cols-4 gap-4 rounded-r-xl rounded-b-xl p-4 overflow-y-auto'>
+    <div className='w-100% h-[450px] inset-0 bg-gray-700 bg-opacity-15 backdrop-blur-md justify-between flex-wrap grid grid-cols-4 gap-4 rounded-r-xl rounded-b-xl p-4 overflow-y-auto'>
       {filteredReports && filteredReports.length > 0 ? (
         filteredReports.map((item, index) => (
           <Cards

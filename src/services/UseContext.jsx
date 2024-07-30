@@ -95,7 +95,6 @@ const UserProvider = ({ children }) => {
         try {
             const token = localStorage.getItem('token')
             const result = await axios.get('http://localhost:3400/myreports', { headers: { Authorization: `Bearer ${token}` } })
-            console.log(result.data)
             return setMyReports(result.data)
           } catch (error) {
             console.error(error)
@@ -104,7 +103,7 @@ const UserProvider = ({ children }) => {
     }
 
     return (
-        <UseContext.Provider value={{ report, create, myreports, setCrete, register, setCrete, setReport, login, logout, allReports, createReport, myReports }} >
+        <UseContext.Provider value={{ report, create, myreports, user, location, setCrete, register, setCrete, setReport, login, logout, allReports, createReport, myReports }} >
             {children}
         </UseContext.Provider>
     )

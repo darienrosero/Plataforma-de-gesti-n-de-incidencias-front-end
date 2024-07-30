@@ -12,7 +12,7 @@ const Cards = ({status_report, date, section, description, location, img}) => {
   }
 
   return (
-    <div className='w-[285px] h-[200px] bg-slate-400 rounded-xl cursor-pointer p-4 overflow-y-auto '>
+    <div className='w-[285px] h-[200px] bg-ligth-purple bg-opacity-35 backdrop-blur-lg rounded-xl cursor-pointer p-4 text-white overflow-y-auto '>
       <h1>Estado:{status_report} </h1>
       <p>fecha de informe:{date} </p>
       <p>Tipo de incidencia:{section} </p>

@@ -10,7 +10,7 @@ const MainCards = () => {
   };
 
   return (
-    <div className='w-[100%] bg-transparent h-[100%] rounded-xl font-jost '>
+    <div className='w-[100%]  h-[100%] rounded-xl font-jost '>
       <ShortCut onFilterChange={handleFilterChange} />
       <FilterCards filter={currentFilter} />
     </div>

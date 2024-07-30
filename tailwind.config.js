@@ -13,7 +13,7 @@ export default {
       },
       fontFamily:{
         'jost': ["Jost", 'sans-serif']
-      }
+      },
     },
   },
   plugins: [],
