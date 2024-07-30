@@ -75,7 +75,7 @@ const DashboardUser = () => {
 
               <div onClick={() => setView('mainCards')} className='cursor-pointer'><img src={logo} className='w-20 ' /></div>
 
-              <div onClick={openModal} className='bg-ligth-purple w-16 h-16 text-[10px] rounded-lg flex flex-col justify-center items-center cursor-pointer '><img src={add} className='w-[30px] ' /> Enviar reporte</div>
+              <div onClick={openModal} className='bg-ligth-purple w-16 h-16 text-[10px] rounded-lg flex flex-col justify-center items-center cursor-pointer '><img src={add} className='w-[50px] ' /></div>
 
               <Report isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
                 <form>
@@ -98,7 +98,7 @@ const DashboardUser = () => {
                 </form>
               </Report>
 
-              <div onClick={() => setView('myReports')} className='bg-ligth-purple w-16 h-16 rounded-lg flex justify-center p-2 cursor-pointer'>Mis Reportes</div>
+              <div onClick={() => setView('myReports')} className='bg-ligth-purple w-16 h-16 rounded-lg flex justify-center p-2 cursor-pointer'><p className='text-center'>Mis Reportes</p></div>
 
             </div>
 

@@ -30,7 +30,7 @@ export default function Login() {
         return <DashboardUser />
     }
     } catch (error) {
-      console.log(error.response?.data?.message || 'Login failed');
+      console.log(error.response?.data?.message);
     }
 
   }

@@ -12,7 +12,7 @@ const FilterCardsAdmin = ({ filter }) => {
 
   const filteredReports = filter === 'all'
     ? report
-    : report.filter(item => item.section_id === parseInt(filter));
+    : report.filter(item => item.section === parseInt(filter));
 
     const sectionNames = {
       1: 'Edificio',
