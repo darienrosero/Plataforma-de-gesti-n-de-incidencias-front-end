@@ -16,7 +16,7 @@ const Report = ({ isOpen, onClose, children }) => {
             </svg>
           </button>
         </div>
-        <div className="mt-4">
+        <div className="mt-4 text-black">
           {children}
         </div>
       </div>
